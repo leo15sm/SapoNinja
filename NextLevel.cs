@@ -10,7 +10,7 @@ public class NextLevel : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D colidir)
     {
-        if(colidir.gameObject.tag == "Player")
+        if(colidir.gameObject.tag == "Player" && GameController.instance.totalScore == 100)
         {
             SceneManager.LoadScene(nextLevelName);
         }

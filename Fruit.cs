@@ -36,7 +36,7 @@ public class Fruit : MonoBehaviour
             GameController.instance.UpdateScoreText();
             Player.instance.Escala();
             
-            if(GameController.instance.totalScore == 100)
+            if(GameController.instance.totalScore == 120)
             {
                 GameController.instance.RestartGame("EndGame");
             }

@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             anim.SetBool("walk", false);
         }
         
-        if(Input.GetKeyDown ( KeyCode.Alpha0) && !isJump) //dormindo
+        if(Input.GetKeyDown (KeyCode.Alpha0) && !isJump) //dormindo
         {
             sleep += 90;
             transform.eulerAngles = new Vector3(0f, rl, sleep);
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
     //Verifica se esta tocando o layer solo
     void OnCollisionEnter2D(Collision2D colidir)
     {
-        if(colidir.gameObject.layer == 6)
+        if(colidir.gameObject.layer == 6 || colidir.gameObject.layer == 7)
         {
             isJump = false; 
             anim.SetBool("jump", false);
@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
         }
         
         //Chamada de Game Over
-        if(colidir.gameObject.tag == "Spike")
+        if(colidir.gameObject.tag == "Trap")
         {
             GameController.instance.ShowGameOver();
             Destroy(gameObject);
